@@ -5,7 +5,7 @@ const   express           = require("express"),
 
 // CLASS THREE
 router.get('/', (req,res) => {
-    res.render('classThree/Three')
+    res.render('classThree/three')
 })
 
 router.post('/', (req, res) => {
