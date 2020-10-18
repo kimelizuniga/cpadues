@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #6C757D;
+    color: whitesmoke;
+}
+
+article {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover {
+    color: lightgrey;
+    text-decoration: none;
+}
+
+label, input {
+    display: block;
+}
+
+.fa-plus {
+    color:lime;
+}
+
+.fa-edit {
+    margin-left: 1rem;
+    color: darkblue;
+}
+
+.fa-trash-alt {
+    margin-left: 0.5rem;
+    color: darkred;
+}
+
+.mainSection {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 1rem;
+    background-color: darkslategray;
+}
+
+.backSubmitButton {
+    text-align: center;
+}
+
+#courseList li {
+    margin-left: 1rem;
+    color: rgb(207, 189, 20);
+    font-weight: bold;
+}

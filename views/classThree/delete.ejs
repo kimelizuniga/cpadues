@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<section class="mainSection">
+    <h2>Class Three</h2>
+    <section class="mt-4">
+        <h4>Delete this task?</h4>
+        <% let date = taskThree.date %>
+        <h5><%= taskThree.task %> - Due on <%= date.toString().substring(0,21) %></h5>
+    </section>
+    
+    <form class="mt-4 text-center" action="/three/<%= taskThree._id %>?_method=DELETE" method="POST">
+        <input class="btn btn-info" type="button" onclick="history.go(-1);" value="Back">    
+        <input class="btn btn-success" type="submit" value="Submit">
+    </form>
+</section>
+
+<%- include('../partials/footer') %>    
