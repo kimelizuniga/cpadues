@@ -54,6 +54,10 @@ label, input {
     text-align: center;
 }
 
+.taskName {
+    color:rgb(141, 139, 247);
+}
+
 #courseList li {
     margin-left: 1rem;
     color: rgb(207, 189, 20);

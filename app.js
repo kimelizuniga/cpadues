@@ -63,12 +63,12 @@ app.get('/', (req, res) => {
                                                     console.log(err);
                                                 } else {
                                                     res.render("index", {
-                                                        taskOnes: allOnes,
-                                                        taskTwos: allTwos,
-                                                        taskThrees: allThrees,
-                                                        taskFours: allFours,
-                                                        taskFives: allFives,
-                                                        taskSixes: allSixes
+                                                        taskOnes: allOnes.sort((a, b) => a.date - b.date),
+                                                        taskTwos: allTwos.sort((a, b) => a.date - b.date),
+                                                        taskThrees: allThrees.sort((a, b) => a.date - b.date),
+                                                        taskFours: allFours.sort((a, b) => a.date - b.date),
+                                                        taskFives: allFives.sort((a, b) => a.date - b.date),
+                                                        taskSixes: allSixes.sort((a, b) => a.date - b.date)
                                                         });
                                                 }
                                             })

@@ -9,7 +9,7 @@
             <% if(taskOnes.length > 0) { %>
                 <% taskOnes.forEach((task) => { %>
                     <% let date = task.date %>
-                    <li><%= task.task %> - Due on <%= date.toString().substring(0,21) %> 
+                    <li><span class="taskName"><%= task.task %></span> - Due on <%= date.toString().substring(0,21) %> 
                         <a href="/one/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                         <a href="/one/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                     </li>
@@ -25,7 +25,7 @@
             <% if(taskTwos.length > 0) { %>
                 <% taskTwos.forEach((task) => { %>
                     <% let date = task.date %>
-                    <li><%= task.task %> - Due on <%= date.toString().substring(0,21) %> 
+                    <li><span class="taskName"><%= task.task %></span> - Due on <%= date.toString().substring(0,21) %> 
                         <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                         <a href="/two/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                     </li>
@@ -41,7 +41,7 @@
             <% if(taskThrees.length > 0) { %>
                 <% taskThrees.forEach((task) => { %>
                     <% let date = task.date %>
-                    <li><%= task.task %> - Due on <%= date.toString().substring(0,21) %> 
+                    <li><span class="taskName"><%= task.task %></span> - Due on <%= date.toString().substring(0,21) %> 
                         <a href="/three/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                         <a href="/three/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                     </li>
@@ -57,7 +57,7 @@
             <% if(taskFours.length > 0) { %>
                 <% taskFours.forEach((task) => { %>
                     <% let date = task.date %>
-                    <li><%= task.task %> - Due on <%= date.toString().substring(0,21) %> 
+                    <li><span class="taskName"><%= task.task %></span> - Due on <%= date.toString().substring(0,21) %> 
                         <a href="/four/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                         <a href="/four/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                     </li>
@@ -73,7 +73,7 @@
             <% if(taskFives.length > 0) { %>
                 <% taskFives.forEach((task) => { %>
                     <% let date = task.date %>
-                    <li><%= task.task %> - Due on <%= date.toString().substring(0,21) %> 
+                    <li><span class="taskName"><%= task.task %></span> - Due on <%= date.toString().substring(0,21) %> 
                         <a href="/five/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                         <a href="/five/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                     </li>
@@ -89,7 +89,7 @@
             <% if(taskSixes.length > 0) { %>
                 <% taskSixes.forEach((task) => { %>
                     <% let date = task.date %>
-                    <li><%= task.task %> - Due on <%= date.toString().substring(0,21) %> 
+                    <li><span class="taskName"><%= task.task %></span> - Due on <%= date.toString().substring(0,21) %> 
                         <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                         <a href="/six/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                     </li>
