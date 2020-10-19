@@ -10,7 +10,6 @@ body {
 
 article {
     margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 section h4 {
@@ -62,10 +61,6 @@ label, input {
 
 .taskName {
     color:rgb(141, 139, 247);
-}
-
-#courseList {
-    
 }
 
 #courseList li {
