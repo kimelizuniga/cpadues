@@ -13,6 +13,10 @@ article {
     margin-bottom: 2rem;
 }
 
+section h4 {
+    color: rgb(252, 35, 35)
+}
+
 a {
     text-decoration: none;
     color: whitesmoke;
@@ -48,6 +52,8 @@ label, input {
     margin: auto;
     margin-bottom: 1rem;
     background-color: darkslategray;
+    display: flex;
+    flex-direction: column;
 }
 
 .backSubmitButton {
@@ -58,8 +64,16 @@ label, input {
     color:rgb(141, 139, 247);
 }
 
+#courseList {
+    
+}
+
 #courseList li {
     margin-left: 1rem;
     color: rgb(207, 189, 20);
     font-weight: bold;
+}
+
+@media (min-width: 768px) {
+
 }
