@@ -4,30 +4,41 @@
 }
 
 body {
-    background-color: #6C757D;
-    color: whitesmoke;
+    color: #000;
 }
 
-article {
-    margin-top: 2rem;
+header a {
+    color: black;
 }
 
 section h4 {
     color: rgb(252, 35, 35)
 }
 
+section div.courseHeading {
+    color: black;
+    border-bottom: 2px solid #d81118;
+}
+
 a {
     text-decoration: none;
-    color: whitesmoke;
+    color: #d81118;
 }
 
 a:hover {
-    color: lightgrey;
+    color: #d67f82;
     text-decoration: none;
 }
 
 label, input {
     display: block;
+}
+
+.articleBg {
+    margin-top: 2rem;
+    background-color: #828286;
+    padding: 16px;
+    border-radius: 1em;
 }
 
 .fa-plus {
@@ -36,12 +47,12 @@ label, input {
 
 .fa-edit {
     margin-left: 1rem;
-    color: darkblue;
+    color: rgb(143, 152, 248);
 }
 
 .fa-trash-alt {
     margin-left: 0.5rem;
-    color: darkred;
+    color: #d67f82;
 }
 
 .mainSection {
@@ -50,7 +61,8 @@ label, input {
     width: 95%;
     margin: auto;
     margin-bottom: 1rem;
-    background-color: darkslategray;
+    background-color: #FFF;
+    color:  #d81118;
     display: flex;
     flex-direction: column;
 }
@@ -60,12 +72,12 @@ label, input {
 }
 
 .taskName {
-    color:rgb(141, 139, 247);
+    color:rgb(227, 243, 7);
 }
 
 #courseList li {
     margin-left: 1rem;
-    color: rgb(207, 189, 20);
+    color: #FFF;
     font-weight: bold;
 }
 
