@@ -6,7 +6,7 @@
         <p>Military Time: 00:00 - 23:59</p>
     </div>
     <div class="row">
-        <article class="col-lg-4">
+        <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMM110 - Communications for College</h5>
                 <ul>
@@ -14,8 +14,13 @@
                         <% taskOnes.forEach((task) => { %>
                             <% let date = task.date %>
                             <li><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
+                            <div class="">
+                                Submit by
+                                <span class="submit"><%= task.submit %></span>
                                 <a href="/one/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                                 <a href="/one/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                                
                             </li>
                         <% }) %>
                     <% } %>
@@ -24,7 +29,7 @@
             </div>
         </article>
     
-        <article class="col-lg-4">
+        <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP1100 - Introduction to C++ Programming</h5>
                 <ul>
@@ -32,8 +37,12 @@
                         <% taskTwos.forEach((task) => { %>
                             <% let date = task.date %>
                             <li><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/two/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <div>
+                                    Submit by
+                                    <span class="submit"><%= task.submit %></span>
+                                    <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                    <a href="/two/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                </div>
                             </li>
                         <% }) %>
                     <% } %>
@@ -42,7 +51,7 @@
             </div>
         </article>
     
-        <article class="col-lg-4">
+        <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP1111 - Introduction to Databases</h5>
                 <ul>
@@ -50,8 +59,12 @@
                         <% taskThrees.forEach((task) => { %>
                             <% let date = task.date %>
                             <li><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                <a href="/three/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/three/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <div>
+                                    Submit by
+                                    <span class="submit"><%= task.submit %></span>
+                                    <a href="/three/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                    <a href="/three/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                </div>
                             </li>
                         <% }) %>
                     <% } %>
@@ -60,7 +73,7 @@
             </div>
         </article>
     
-        <article class="col-lg-4">
+        <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP205 - Web Development</h5>
                 <ul>
@@ -68,8 +81,12 @@
                         <% taskFours.forEach((task) => { %>
                             <% let date = task.date %>
                             <li><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                <a href="/four/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/four/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <div>
+                                    Submit by
+                                    <span class="submit"><%= task.submit %></span>
+                                    <a href="/four/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                    <a href="/four/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                </div>
                             </li>
                         <% }) %>
                     <% } %>
@@ -78,7 +95,7 @@
             </div>
         </article>
     
-        <article class="col-lg-4">
+        <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP211 - Program Design</h5>
                 <ul>
@@ -86,8 +103,12 @@
                         <% taskFives.forEach((task) => { %>
                             <% let date = task.date %>
                             <li><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                <a href="/five/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/five/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <div>
+                                    Submit by
+                                    <span class="submit"><%= task.submit %></span>
+                                    <a href="/five/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                    <a href="/five/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                </div>
                             </li>
                         <% }) %>
                     <% } %>
@@ -96,7 +117,7 @@
             </div>
         </article>
     
-        <article class="col-lg-4">
+        <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>MATH8 - Introductory to Computer Mathematics</h5>
                 <ul>
@@ -104,8 +125,12 @@
                         <% taskSixes.forEach((task) => { %>
                             <% let date = task.date %>
                             <li><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/six/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <div>
+                                    Submit by
+                                    <span class="submit"><%= task.submit %></span>
+                                    <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                    <a href="/six/<%= task.id %>/delete"><i class="fas  fa-trash-alt"></i></a>
+                                </div>
                             </li>
                         <% }) %>
                     <% } %>

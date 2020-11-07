@@ -75,6 +75,11 @@ label, input {
     color:rgb(227, 243, 7);
 }
 
+.submit {
+    white-space: nowrap;
+    color: rgb(9, 247, 29)
+}
+
 #courseList li {
     margin-left: 1rem;
     color: #FFF;

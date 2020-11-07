@@ -10,11 +10,12 @@ router.get('/', (req,res) => {
 
 router.post('/', (req, res) => {
     let   task         = req.body.task,
-          date         = req.body.date;
+          date         = req.body.date,
+          submittal    = req.body.submittal;
 
    
 
-    const newTask = { task: task, date: date};
+    const newTask = { task: task, date: date, submit: submittal};
 
     TaskOne.create(newTask, (err, newCreated) => {
         if(err){

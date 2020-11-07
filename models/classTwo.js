@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const classTwoSchema = new mongoose.Schema({
     task: String,
-    date: { type: Date }
+    date: { type: Date },
+    submit: String
 })
 
 module.exports = mongoose.model('TaskTwo', classTwoSchema);
