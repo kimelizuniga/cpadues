@@ -94,6 +94,8 @@ label, input {
 
 .done {
     text-decoration: line-through solid black;
+    opacity: 0.6;
+    font-style: italic;
 }
 
 #courseList li {
