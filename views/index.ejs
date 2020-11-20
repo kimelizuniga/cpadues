@@ -92,7 +92,7 @@
                         <% taskThrees.forEach((task) => { %>
                             <% let date = task.date %>
                             <div class="mb-3">
-                                <li class="toggle"><span><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
+                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
                                     <div>
                                         Submit by
                                         <span class="submit">
