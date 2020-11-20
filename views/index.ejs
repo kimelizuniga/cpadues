@@ -1,61 +1,5 @@
 <%- include('partials/header') %>
-<% let dueToday = 0; %>
-<% let pastDues = 0; %>
 
-<% let todaysDate = new Date() %>
-<% for(i = 0; i < taskOnes.length; i++) {%>
-<%      if(taskOnes[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
-<%          dueToday++; %>
-<%      } %>
-<%      if(taskOnes[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
-<%          pastDues++; %>
-<%      } %> 
-<% } %>
-
-<% for(i = 0; i < taskTwos.length; i++) {%>
-<%      if(taskTwos[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
-<%          dueToday++; %>
-<%      } %>
-<%      if(taskTwos[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
-<%          pastDues++; %>
-<%      } %> 
-<% } %>
-
-<% for(i = 0; i < taskThrees.length; i++) {%>
-<%      if(taskThrees[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
-<%          dueToday++; %>
-<%      } %>
-<%      if(taskThrees[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
-<%          pastDues++; %>
-<%      } %>
-<% } %>
-
-<% for(i = 0; i < taskFours.length; i++) {%>
-<%      if(taskFours[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
-<%          dueToday++; %>
-<%      } %>
-<%      if(taskFours[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
-<%          pastDues++; %>
-<%      } %>
-<% } %>
-
-<% for(i = 0; i < taskFives.length; i++) {%>
-<%      if(taskFives[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
-<%          dueToday++; %>
-<%      } %>
-<%      if(taskFives[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
-<%          pastDues++; %>
-<%      } %>
-<% } %>
-
-<% for(i = 0; i < taskSixes.length; i++) {%>
-<%      if(taskSixes[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
-<%          dueToday++; %>
-<%      } %>
-<%      if(taskSixes[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
-<%          pastDues++; %>
-<%      } %>
-<% } %>
 
 <section id="courseList" class="mainSection container">
     <div class="courseHeading row">
@@ -74,13 +18,13 @@
             <p class="border-top border-bottom pt-2 pb-2">
                 Due Today:
                 <span class="colorYellow">
-                    <%= dueToday %>
+                    Under Construction
                 </span>
             </p>
             <p>
                 Past Dues:
                 <span class="colorRed">
-                    <%= pastDues %>
+                    Under Construction
                 </span>
             </p>
         </sextion>
