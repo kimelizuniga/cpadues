@@ -1,9 +1,90 @@
 <%- include('partials/header') %>
+<% let dueToday = 0; %>
+<% let pastDues = 0; %>
+
+<% let todaysDate = new Date() %>
+<% for(i = 0; i < taskOnes.length; i++) {%>
+<%      if(taskOnes[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
+<%          dueToday++; %>
+<%      } %>
+<%      if(taskOnes[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
+<%          pastDues++; %>
+<%      } %> 
+<% } %>
+
+<% for(i = 0; i < taskTwos.length; i++) {%>
+<%      if(taskTwos[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
+<%          dueToday++; %>
+<%      } %>
+<%      if(taskTwos[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
+<%          pastDues++; %>
+<%      } %> 
+<% } %>
+
+<% for(i = 0; i < taskThrees.length; i++) {%>
+<%      if(taskThrees[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
+<%          dueToday++; %>
+<%      } %>
+<%      if(taskThrees[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
+<%          pastDues++; %>
+<%      } %>
+<% } %>
+
+<% for(i = 0; i < taskFours.length; i++) {%>
+<%      if(taskFours[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
+<%          dueToday++; %>
+<%      } %>
+<%      if(taskFours[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
+<%          pastDues++; %>
+<%      } %>
+<% } %>
+
+<% for(i = 0; i < taskFives.length; i++) {%>
+<%      if(taskFives[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
+<%          dueToday++; %>
+<%      } %>
+<%      if(taskFives[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
+<%          pastDues++; %>
+<%      } %>
+<% } %>
+
+<% for(i = 0; i < taskSixes.length; i++) {%>
+<%      if(taskSixes[i].date.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {%>
+<%          dueToday++; %>
+<%      } %>
+<%      if(taskSixes[i].date.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)) {%>
+<%          pastDues++; %>
+<%      } %>
+<% } %>
 
 <section id="courseList" class="mainSection container">
-    <div class="courseHeading">
-        <h2>Due Dates <i class="far fa-calendar-alt"></i></h2>
-        <p>Military Time: 00:00 - 23:59</p>
+    <div class="courseHeading row">
+        <section class="col-md-4">
+            <h2>Due Dates <i class="far fa-calendar-alt"></i></h2>
+            <p>Military Time: 00:00 - 23:59</p>
+        </section>
+        <sextion class="col-md-8">
+            <h4>Summary</h4>
+            <p>
+                Total Tasks:
+                <span id="totalTasks">
+                    <%= taskOnes.length + taskTwos.length + taskThrees.length + taskFours.length + taskFives.length + taskSixes.length %>
+                </span>
+            </p>
+            <p class="border-top border-bottom pt-2 pb-2">
+                Due Today:
+                <span class="colorYellow">
+                    <%= dueToday %>
+                </span>
+            </p>
+            <p>
+                Past Dues:
+                <span class="colorRed">
+                    <%= pastDues %>
+                </span>
+            </p>
+        </sextion>
+        
     </div>
     <div class="row">
         <article class="col-md-6 col-lg-4">

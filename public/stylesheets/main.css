@@ -80,10 +80,25 @@ label, input {
     color: rgb(9, 247, 29)
 }
 
+.colorRed {
+    color: rgb(238, 45, 45);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+.colorYellow {
+    color: rgb(250, 166, 11);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
 #courseList li {
     margin-left: 1rem;
     margin-bottom: 1rem;
     color: #FFF;
+    font-weight: bold;
+}
+
+#totalTasks {
     font-weight: bold;
 }
 
