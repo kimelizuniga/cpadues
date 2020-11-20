@@ -82,6 +82,7 @@ label, input {
 
 #courseList li {
     margin-left: 1rem;
+    margin-bottom: 1rem;
     color: #FFF;
     font-weight: bold;
 }
