@@ -91,11 +91,32 @@ label, input {
     font-weight: bold;
     text-shadow: 1px 1px 1px black;
 }
+
+.lists:checked:before {
+    text-decoration: none;
+}
+
+.lists.checked {
+    text-decoration: black line-through solid;
+}
+
+.lists.in {
+    text-decoration: black line-through solid;
+}
+
+.lists.in:before {
+    text-decoration: black line-through solid;
+}
+
+.lists:before {
+    text-decoration: black line-through solid;
+}
+
 #courseList li {
     margin-left: 1rem;
-    margin-bottom: 1rem;
     color: #FFF;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #totalTasks {
