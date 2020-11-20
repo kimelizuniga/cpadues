@@ -92,24 +92,8 @@ label, input {
     text-shadow: 1px 1px 1px black;
 }
 
-.lists:checked:before {
-    text-decoration: none;
-}
-
-.lists.checked {
-    text-decoration: black line-through solid;
-}
-
-.lists.in {
-    text-decoration: black line-through solid;
-}
-
-.lists.in:before {
-    text-decoration: black line-through solid;
-}
-
-.lists:before {
-    text-decoration: black line-through solid;
+.done {
+    text-decoration: line-through solid black;
 }
 
 #courseList li {

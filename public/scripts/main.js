@@ -1,13 +1,22 @@
-var $toggles = $('.lists').on('click', function() {
-    var checkedStates = $toggles.map(function() {
-      return this.checked;
-    }).get();
-    localStorage.setItem('checkedStates', JSON.stringify(checkedStates));
-    $(this).toggleClass('in');
-  })
-  
-  if (localStorage.getItem('checkedStates')) {
-    JSON.parse(localStorage.getItem('checkedStates')).forEach(function(checked, i) {
-      $('.lists').eq(i).prop('checked', checked).toggleClass('in', checked)
-    });
+if (typeof(localStorage) == 'undefined') {
+    document.getElementById("result").innerHTML =
+      'Your browser does not support HTML5 localStorage. Try upgrading.';
+  } else {
+      $(".toggle").each(function(i, el) {
+        if (localStorage['status' + i] == 'checked') {
+          $(this).addClass('done');
+        }
+      });
   }
+  $(document).ready(function() {
+    $('.toggle').on('click', function() {
+      var $item = $(this).closest('.toggle');
+      var index = $('.toggle').index($item);
+      $item.toggleClass('done');
+      if ($item.hasClass('done')) {
+        localStorage.setItem('status' + index, 'checked');
+      } else {
+        localStorage.removeItem('status' + index);
+      }
+    });
+  });
