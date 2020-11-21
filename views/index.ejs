@@ -62,12 +62,16 @@
                                         </span>
                                     </div>
                                 </li>
-                                <a href="/one/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                <% if(currentUser){ %>
+                                    <a href="/one/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                                 <a href="/one/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <% } %>    
                             </div>
                         <% }) %>
                     <% } %>
-                    <a href="/one"><i class="fas fa-plus"></i></a>
+                    <% if(currentUser){ %>
+                        <a href="/one"><i class="fas fa-plus"></i></a>
+                    <% } %>
                 </ul>
             </div>
         </article>
@@ -88,12 +92,16 @@
                                         </span>
                                     </div>
                                 </li>
-                                <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                                <% if(currentUser){ %>
+                                    <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                                 <a href="/two/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <% } %>    
                             </div>
                         <% }) %>
                     <% } %>
-                    <a href="/two"><i class="fas fa-plus"></i></a>
+                    <% if(currentUser){ %>
+                        <a href="/two"><i class="fas fa-plus"></i></a>
+                    <% } %>
                 </ul>
             </div>
         </article>
@@ -114,12 +122,16 @@
                                         </span>
                                     </div>
                                 </li>
+                                <% if(currentUser){ %>
                                 <a href="/three/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                                 <a href="/three/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <% } %>    
                             </div>
                         <% }) %>
                     <% } %>
-                    <a href="/three"><i class="fas fa-plus"></i></a>
+                    <% if(currentUser){ %>
+                        <a href="/three"><i class="fas fa-plus"></i></a>
+                    <% } %>
                 </ul>
             </div>
         </article>
@@ -140,12 +152,16 @@
                                         </span>                                        
                                     </div>
                                 </li>
+                                <% if(currentUser){ %>
                                 <a href="/four/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                                 <a href="/four/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <% } %>    
                             </div>
                         <% }) %>
                     <% } %>
-                    <a href="/four"><i class="fas fa-plus"></i></a>
+                    <% if(currentUser){ %>
+                        <a href="/four"><i class="fas fa-plus"></i></a>
+                    <% } %>
                 </ul>
             </div>
         </article>
@@ -166,12 +182,16 @@
                                         </span>                                        
                                     </div>
                                 </li>
+                                <% if(currentUser){ %>
                                 <a href="/five/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
                                 <a href="/five/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <% } %>    
                             </div>
                         <% }) %>
                     <% } %>
-                    <a href="/five"><i class="fas fa-plus"></i></a>
+                    <% if(currentUser){ %>
+                        <a href="/five"><i class="fas fa-plus"></i></a>
+                    <% } %>
                 </ul>
             </div>
         </article>
@@ -192,12 +212,16 @@
                                         </span>
                                     </div>
                                 </li>
+                                <% if(currentUser){ %>
                                 <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/six/<%= task.id %>/delete"><i class="fas  fa-trash-alt"></i></a>
+                                <a href="/six/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                                <% } %>    
                             </div>
                         <% }) %>
                     <% } %>
-                    <a href="/six"><i class="fas fa-plus"></i></a>
+                    <% if(currentUser){ %>
+                        <a href="/six"><i class="fas fa-plus"></i></a>
+                    <% } %>
                 </ul>
             </div>
         </article>
