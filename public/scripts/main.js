@@ -9,7 +9,7 @@ if (typeof(localStorage) == 'undefined') {
       });
   }
   $(document).ready(function() {
-    $('.toggle').on('click', function() {
+    $('.toggle').on('dblclick', function() {
       var $item = $(this).closest('.toggle');
       var index = $('.toggle').index($item);
       $item.toggleClass('done');

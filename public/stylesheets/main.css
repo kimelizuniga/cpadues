@@ -98,17 +98,32 @@ label, input {
     font-style: italic;
 }
 
-#courseList li {
+div.dates li {
     margin-left: 1rem;
     color: #FFF;
     font-weight: bold;
     cursor: pointer;
 }
 
+ul.notice li {
+   list-style: none;
+}
+
+.disclaimer {
+    border-top: 1px solid grey;
+    padding-top: 1em;
+    font-size: small;
+    font-style: italic;
+}
+
 #totalTasks {
     font-weight: bold;
 }
 
-@media (min-width: 768px) {
-
+@media (max-width: 768px) {
+    .infos {
+        border: 1px solid black;
+        padding: 1em;
+        margin: 1em;
+    }
 }
