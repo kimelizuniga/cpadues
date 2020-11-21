@@ -20,3 +20,10 @@ if (typeof(localStorage) == 'undefined') {
       }
     });
   });
+
+  $(document).ready(function() {
+    $('.btn-success').on('click', function() {
+      localStorage.clear();
+    });
+  });
+ 
