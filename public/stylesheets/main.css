@@ -92,17 +92,12 @@ label, input {
     text-shadow: 1px 1px 1px black;
 }
 
-.done {
-    text-decoration: line-through solid black;
-    opacity: 0.6;
-    font-style: italic;
-}
-
 div.dates li {
     margin-left: 1rem;
     color: #FFF;
     font-weight: bold;
     cursor: pointer;
+    list-style: none;
 }
 
 ul.notice li {
@@ -130,6 +125,20 @@ ul.notice li {
     color: rgba(1, 255, 77, 0.699);
     text-shadow: 1px 1px 2px black;
 }
+
+label {
+    display: inline;
+}
+
+input[type=checkbox] {
+    display: inline;
+}
+
+input[type=checkbox]:checked + label {
+    text-decoration: line-through solid black;
+    opacity: 0.6;
+    font-style: italic;
+} 
 
 #topHead {
     padding-top: 6em;

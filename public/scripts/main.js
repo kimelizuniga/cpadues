@@ -1,29 +1,41 @@
-if (typeof(localStorage) == 'undefined') {
-    document.getElementById("result").innerHTML =
-      'Your browser does not support HTML5 localStorage. Try upgrading.';
-  } else {
-      $(".toggle").each(function(i, el) {
-        if (localStorage['status' + i] == 'checked') {
-          $(this).addClass('done');
-        }
-      });
-  }
-  $(document).ready(function() {
-    $('.toggle').on('dblclick', function() {
-      var $item = $(this).closest('.toggle');
-      var index = $('.toggle').index($item);
-      $item.toggleClass('done');
-      if ($item.hasClass('done')) {
-        localStorage.setItem('status' + index, 'checked');
-      } else {
-        localStorage.removeItem('status' + index);
-      }
-    });
+function save(){
+  // Get all checkbox inputs
+  var inputs = document.querySelectorAll('input[type="checkbox"]');
+  var arrData = [];
+  // For each inputs...
+  inputs.forEach(function(input){
+    // ... save what you want (but 'ID' and 'checked' values are necessary)
+    arrData.push({ id: input.id, checked: input.checked });
   });
+  // Save in localStorage
+  localStorage.setItem('inputs', JSON.stringify(arrData));
 
-  $(document).ready(function() {
-    $('.btn-success').on('click', function() {
-      localStorage.clear();
-    });
+  console.log(JSON.stringify(arrData));
+  // [
+  //   {
+  //     'id': 'ch1',
+  //     'checked': false  // or true
+  //   },
+  //   ... and so on
+  // ]
+}
+
+function load(){
+  var inputs = JSON.parse(localStorage.getItem('inputs'));
+  // For each inputs...
+  inputs.forEach(function(input){
+    // Set the 'checked' value
+    if(document.getElementById(input.id) === null){
+      console.log('One item was missing');
+    } else {
+      document.getElementById(input.id).checked = input.checked;
+    }
+    
   });
- 
+  console.log(localStorage);  
+}
+
+
+$(document).ready(function () {
+  load();
+});

@@ -33,17 +33,17 @@
             <h5>Keep track of what you've done</h5>
             <ul class="notice">
                 <li class="mt-3 text-info">
-                    Double click to check/uncheck a task
+                    Tracking of checked items will only be saved on one device
                 </li>
-                <li class="mb-3 font-italic small">
-                    (Tracking will only be saved on one device)
-                </li>
+                
                 <li class="disclaimer">
-                    The content of this website is not guaranteed to be accurate. These pieces of information are collectively gathered and uploaded by your fellow classmates and may not be accurate. Please refer to them at your discretion.
+                    The content of this website is not guaranteed to be accurate. These pieces of information are
+                    collectively gathered and uploaded by your fellow classmates. Please refer
+                    to them at your discretion.
                 </li>
             </ul>
         </section>
-        
+
     </div>
     <div class="row dates">
         <article class="col-md-6 col-lg-4">
@@ -51,178 +51,208 @@
                 <h5>COMM110 - Communications for College</h5>
                 <ul>
                     <% if(taskOnes.length > 0) { %>
-                        <% taskOnes.forEach((task) => { %>
-                            <% let date = task.date %>
-                            <div class="mb-3">
-                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                    <div class="">
-                                        Submit by
-                                        <span class="submit">
-                                            <%= task.submit %>
-                                        </span>
-                                    </div>
-                                </li>
-                                <a href="/one/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/one/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>   
-                            </div>
-                        <% }) %>
+                    <% taskOnes.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li>
+                            <input type="checkbox" class="one" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <label for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                <div>
+                                    Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+                        <a href="/one/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/one/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <% }) %>
                     <% } %>
                     <a href="/one"><i class="fas fa-plus"></i></a>
                 </ul>
             </div>
         </article>
-    
+
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP1100 - Introduction to C++ Programming</h5>
                 <ul>
                     <% if(taskTwos.length > 0) { %>
-                        <% taskTwos.forEach((task) => { %>
-                            <% let date = task.date %>
-                            <div class="mb-3">
-                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                    <div>
-                                        Submit by
-                                        <span class="submit">
-                                            <%= task.submit %>
-                                        </span>
-                                    </div>
-                                </li>
-                                <% if(currentUser){ %>
-                                    <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/two/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
-                                <% } %>    
-                            </div>
-                        <% }) %>
+                    <% taskTwos.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li>
+                            <input type="checkbox" class="two" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <label for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                <div>
+                                    Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/two/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/two/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
                     <% } %>
                     <% if(currentUser){ %>
-                        <a href="/two"><i class="fas fa-plus"></i></a>
+                    <a href="/two"><i class="fas fa-plus"></i></a>
                     <% } %>
                 </ul>
             </div>
         </article>
-    
+
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP1111 - Introduction to Databases</h5>
                 <ul>
                     <% if(taskThrees.length > 0) { %>
-                        <% taskThrees.forEach((task) => { %>
-                            <% let date = task.date %>
-                            <div class="mb-3">
-                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                    <div>
-                                        Submit by
-                                        <span class="submit">
-                                            <%= task.submit %>
-                                        </span>
-                                    </div>
-                                </li>
-                                <% if(currentUser){ %>
-                                <a href="/three/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/three/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
-                                <% } %>    
-                            </div>
-                        <% }) %>
+                    <% taskThrees.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <label for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                <div>
+                                    Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/three/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/three/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
                     <% } %>
                     <% if(currentUser){ %>
-                        <a href="/three"><i class="fas fa-plus"></i></a>
+                    <a href="/three"><i class="fas fa-plus"></i></a>
                     <% } %>
                 </ul>
             </div>
         </article>
-    
+
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP205 - Web Development</h5>
                 <ul>
                     <% if(taskFours.length > 0) { %>
-                        <% taskFours.forEach((task) => { %>
-                            <% let date = task.date %>
-                            <div class="mb-3">
-                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                    <div>
-                                        Submit by
-                                        <span class="submit">
-                                            <%= task.submit %>
-                                        </span>                                        
-                                    </div>
-                                </li>
-                                <% if(currentUser){ %>
-                                <a href="/four/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/four/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
-                                <% } %>    
-                            </div>
-                        <% }) %>
+                    <% taskFours.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <label for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                <div>
+                                    Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                                </div>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/four/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/four/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
                     <% } %>
                     <% if(currentUser){ %>
-                        <a href="/four"><i class="fas fa-plus"></i></a>
+                    <a href="/four"><i class="fas fa-plus"></i></a>
                     <% } %>
                 </ul>
             </div>
         </article>
-    
+
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP211 - Program Design</h5>
                 <ul>
                     <% if(taskFives.length > 0) { %>
-                        <% taskFives.forEach((task) => { %>
-                            <% let date = task.date %>
-                            <div class="mb-3">
-                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                    <div>
-                                        Submit by
-                                        <span class="submit">
-                                            <%= task.submit %>
-                                        </span>                                        
-                                    </div>
-                                </li>
-                                <% if(currentUser){ %>
-                                <a href="/five/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/five/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
-                                <% } %>    
+                    <% taskFives.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <label for="<%= task._id %>">
+                            <span class="taskName"><%= task.task %></span> - Due
+                            <%= date.toString().substring(0,21) %>
+                            <div>
+                                Submit by
+                                <span class="submit">
+                                    <%= task.submit %>
+                                </span>
                             </div>
-                        <% }) %>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/five/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/five/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
                     <% } %>
                     <% if(currentUser){ %>
-                        <a href="/five"><i class="fas fa-plus"></i></a>
+                    <a href="/five"><i class="fas fa-plus"></i></a>
                     <% } %>
                 </ul>
             </div>
         </article>
-    
+
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>MATH8 - Introductory to Computer Mathematics</h5>
                 <ul>
                     <% if(taskSixes.length > 0) { %>
-                        <% taskSixes.forEach((task) => { %>
-                            <% let date = task.date %>
-                            <div class="mb-3">
-                                <li class="toggle"><span class="taskName"><%= task.task %></span> - Due <%= date.toString().substring(0,21) %> 
-                                    <div>
-                                        Submit by
-                                        <span class="submit">
-                                            <%= task.submit %>
-                                        </span>
-                                    </div>
-                                </li>
-                                <% if(currentUser){ %>
-                                <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                                <a href="/six/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
-                                <% } %>    
+                    <% taskSixes.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <label for="<%= task._id %>">
+                            <span class="taskName"><%= task.task %></span> - Due
+                            <%= date.toString().substring(0,21) %>
+                            <div>
+                                Submit by
+                                <span class="submit">
+                                    <%= task.submit %>
+                                </span>
                             </div>
-                        <% }) %>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/six/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
                     <% } %>
                     <% if(currentUser){ %>
-                        <a href="/six"><i class="fas fa-plus"></i></a>
+                    <a href="/six"><i class="fas fa-plus"></i></a>
                     <% } %>
                 </ul>
             </div>
         </article>
     </div>
-    
+
 </section>
 
-<%- include('partials/footer') %>    
+<%- include('partials/footer') %>
