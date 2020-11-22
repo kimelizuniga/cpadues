@@ -4,28 +4,17 @@
 <section id="courseList" class="mainSection container">
     <div class="courseHeading row">
         <section class="col-md-4">
-            <h2>Due Dates <i class="far fa-calendar-alt"></i></h2>
-            <p>Military Time: 00:00 - 23:59</p>
-            <p id="result"></p>
-        </section>
-        <section class="col-md-4">
             <h4>Summary</h4>
-            <p>
+            <p class="colorYellow">
                 Total Tasks:
-                <span>
+                <span id="total" class="colorwYellow">
                     <%= taskOnes.length + taskTwos.length + taskThrees.length + taskFours.length + taskFives.length + taskSixes.length %>
                 </span>
             </p>
-            <p class="border-top border-bottom pt-2 pb-2">
-                Due Today:
-                <span class="colorYellow">
-                    Under Construction
-                </span>
-            </p>
-            <p>
-                Past Dues:
-                <span class="colorRed">
-                    Under Construction
+            <p class="border-top pt-2 colGreen font-weight-bold">
+                Completed:
+                <span id="completed" class="colGreen font-weight-bold">
+                    
                 </span>
             </p>
         </section>
@@ -55,16 +44,14 @@
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li>
-                            <input type="checkbox" class="one" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <input type="checkbox" class="one" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
                             <label for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
-                                <div>
                                     Submit by
                                     <span class="submit">
                                         <%= task.submit %>
                                     </span>
-                                </div>
                             </label>
                         </li>
                         <% if(currentUser){ %>
@@ -90,16 +77,14 @@
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li>
-                            <input type="checkbox" class="two" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <input type="checkbox" class="two" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
                             <label for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
-                                <div>
-                                    Submit by
+                                Submit by
                                     <span class="submit">
                                         <%= task.submit %>
                                     </span>
-                                </div>
                             </label>
                         </li>
                         <% if(currentUser){ %>
@@ -125,16 +110,14 @@
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
                             <label for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
-                                <div>
-                                    Submit by
+                                Submit by
                                     <span class="submit">
                                         <%= task.submit %>
                                     </span>
-                                </div>
                             </label>
                         </li>
                         <% if(currentUser){ %>
@@ -160,16 +143,14 @@
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
                             <label for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
-                                <div>
-                                    Submit by
+                                Submit by
                                     <span class="submit">
                                         <%= task.submit %>
                                     </span>
-                                </div>
                             </label>
                         </li>
                         <% if(currentUser){ %>
@@ -189,22 +170,21 @@
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>COMP211 - Program Design</h5>
+                <span>dsada</span>
                 <ul>
                     <% if(taskFives.length > 0) { %>
                     <% taskFives.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
                             <label for="<%= task._id %>">
                             <span class="taskName"><%= task.task %></span> - Due
                             <%= date.toString().substring(0,21) %>
-                            <div>
                                 Submit by
                                 <span class="submit">
                                     <%= task.submit %>
                                 </span>
-                            </div>
                             </label>
                         </li>
                         <% if(currentUser){ %>
@@ -230,16 +210,14 @@
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save()">
+                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
                             <label for="<%= task._id %>">
                             <span class="taskName"><%= task.task %></span> - Due
                             <%= date.toString().substring(0,21) %>
-                            <div>
                                 Submit by
                                 <span class="submit">
                                     <%= task.submit %>
                                 </span>
-                            </div>
                             </label>
                         </li>
                         <% if(currentUser){ %>

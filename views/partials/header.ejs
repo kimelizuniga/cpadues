@@ -26,23 +26,35 @@
             <% } %>
         </div>
     </div>
-    <% if(!currentUser){ %>
-        <div>
-            <form id="form-section" action="/login" method="post" class="form-inline mt-3 mr-3">
-                <div class="form-group ml-1">
-                    <input class="form-control" type="text" name="username" placeholder="username">
-                </div>
-                <div class="form-group ml-1">
-                    <input class="form-control" type="password" name="password" placeholder="password">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-md btn-primary btn-block ml-3">Login</button>
+
+    <header id="topHead" class="jumbotron">
+        <h1 class="mb-5"><a href="/">CPA Class of 2023</a></h1>
+        <% if(!currentUser){ %>
+        <div class="form-container">
+            <form id="form-section" action="/login" method="post" class="mt-3">
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control formInputs" type="text" name="username" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control formInputs" type="password" name="password"
+                                placeholder="password">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <button class="btn btn-md btn-primary btn-block login">Login</button>
+                        </div>
+                    </div>
                 </div>
             </form>
-        <% } else { %>
+            <% } else { %>
             <div id="logged-in">
                 <li class="loggedin">
-                    Logged In As: 
+                    Logged In As:
                     <span class="colGreen">
                         <%= currentUser.username %>
                     </span>
@@ -51,9 +63,6 @@
                     </span>
                 </li>
             </div>
-        <% } %>
+            <% } %>
         </div>
-        
-    <header id="topHead" class="jumbotron">
-        <h1><a href="/">CPA Class of 2023</a></h1>
     </header>

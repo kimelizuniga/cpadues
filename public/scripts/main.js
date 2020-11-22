@@ -9,7 +9,6 @@ function save(){
   });
   // Save in localStorage
   localStorage.setItem('inputs', JSON.stringify(arrData));
-
   console.log(JSON.stringify(arrData));
   // [
   //   {
@@ -22,6 +21,7 @@ function save(){
 
 function load(){
   var inputs = JSON.parse(localStorage.getItem('inputs'));
+
   // For each inputs...
   inputs.forEach(function(input){
     // Set the 'checked' value
@@ -30,12 +30,24 @@ function load(){
     } else {
       document.getElementById(input.id).checked = input.checked;
     }
-    
   });
   console.log(localStorage);  
 }
 
+function addComplete() {
+  let checkbox = document.querySelectorAll('input[type="checkbox"]');
+  let complete = document.getElementById('completed');
+  let completed = 0;
+
+  checkbox.forEach(function(box){
+    if(box.checked == true){
+      completed++;
+    }
+  complete.innerHTML = completed;
+  }
+)}
 
 $(document).ready(function () {
   load();
+  addComplete();
 });
