@@ -32,6 +32,29 @@
                 </li>
             </ul>
         </section>
+        <section class="col-md-4">
+            <h5>Winter 2021 Schedule</h5>
+            <ul>
+                <li class="btn btn-success" onclick="showSchedule();">Timetables</li>
+            </ul>
+            <div id="modal">
+                <div id="carousel-modal">
+                    <div id="inner-carousel" class="w-100">
+                        <span id="exit" onclick="closeModal();">X</span>
+                        <div class="text-center mySlides">
+                            <img id="scheduleOne" src="/images/schedule1.png" alt="time_table_1">
+                            <h4 class="text-light mt-2">Section 1</h4>
+                        </div>
+                        <div class="text-center mySlides">
+                            <img id="scheduleTwo" src="/images/schedule2.png" alt="time_table_1">
+                            <h4 class="text-light mt-2">Section 2</h4>
+                        </div>
+                        <span onclick="plusSlides(-1);" id="left"><i class="fas fa-chevron-left"></i></span>
+                        <span onclick="plusSlides(1);" id="right"><i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
     <div class="row dates">
