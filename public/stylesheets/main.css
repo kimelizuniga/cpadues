@@ -274,5 +274,12 @@ input[type=checkbox]:checked + label {
         margin-top: 0;
         width: 60%;
     }
+
+    #carousel-modal {
+        width: 100%;
+    }
     
+    #left, #right {
+        opacity: 0.5;
+    }
 }
