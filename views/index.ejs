@@ -1,8 +1,8 @@
 <%- include('partials/header') %>
 
-<!-- <section id="courseList" class="mainSection container">
+<section id="courseList" class="mainSection container">
     <div class="courseHeading row">
-        <section class="col-md-3">
+        <section id="check101" class="col-md-3">
             <h4>Summary</h4>
             <p class="colorYellow">
                 Total Tasks:
@@ -13,6 +13,21 @@
             <p class="border-top pt-2 colGreen font-weight-bold">
                 Completed:
                 <span id="completed" class="colGreen font-weight-bold">
+                    
+                </span>
+            </p>
+        </section>
+        <section id="check102" class="col-md-3">
+            <h4>Summary</h4>
+            <p class="colorYellow">
+                Total Tasks:
+                <span id="total" class="colorwYellow">
+                    <%= taskSevens.length + taskEights.length + taskNines.length + taskTens.length + taskElevens.length %>
+                </span>
+            </p>
+            <p class="border-top pt-2 colGreen font-weight-bold">
+                Completed:
+                <span id="completed102" class="colGreen font-weight-bold">
                     
                 </span>
             </p>
@@ -59,18 +74,25 @@
             <img class="w-100 mb-5 mt-2" src="/images/meme_<%= rand %>.jpg" alt="image">
         </section>
     </div>
-    <div class="row dates">
+    <div class="row mt-3">
+        <section class="col-md-3">
+            <button id="button101" onclick="saveSection(0); section101();" class="sectionButton" value="101" id="section101">Section 101</button>
+            <button id="button102" onclick="saveSection(1); section102();" class="sectionButton" value="102" id="section102">Section 102</button>
+        </section>
+    </div>
+    <div id="date101" class="row dates">
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
-                <h5>COMP53 - Intermediate Databases</h5>
+                <h5>COMP333 - OOP C++</h5>
+                <h6 class="text-warning">* Weekly Labs due by end of class</h6>
                 <ul>
                     <% if(taskOnes.length > 0) { %>
                     <% taskOnes.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
-                        <li>
-                            <input type="checkbox" class="one" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
-                            <label for="<%= task._id %>">
+                        <li class="toggle">
+                            <input type="checkbox" class="one input101" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
                                     Submit by
@@ -95,16 +117,15 @@
 
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
-                <h5>COMP60 - GUI Application Development with C#.Net</h5>
-                <h6 class="text-warning">Weekly Labs/Quiz Due every Sunday</h6>
+                <h5>COMP220 - PHP Programming</h5>
                 <ul>
                     <% if(taskTwos.length > 0) { %>
                     <% taskTwos.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
-                        <li>
-                            <input type="checkbox" class="two" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
-                            <label for="<%= task._id %>">
+                        <li class="toggle">
+                            <input type="checkbox" class="two input101" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
                                 Submit by
@@ -129,15 +150,15 @@
 
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
-                <h5>COMP76 - The User Experience</h5>
+                <h5>COMP206 - Web Programming with Javascript</h5>
                 <ul>
                     <% if(taskThrees.length > 0) { %>
                     <% taskThrees.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
-                            <label for="<%= task._id %>">
+                            <input type="checkbox" class="input101" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
                                 Submit by
@@ -162,15 +183,15 @@
 
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
-                <h5>COMP105 - Ethics and Computer Security</h5>
+                <h5>COMP1080 - OS Linux, x/OS, TSO/ISPF</h5>
                 <ul>
                     <% if(taskFours.length > 0) { %>
                     <% taskFours.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
-                            <label for="<%= task._id %>">
+                            <input type="checkbox" class="input101" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
                                 <span class="taskName"><%= task.task %></span> - Due
                                 <%= date.toString().substring(0,21) %>
                                 Submit by
@@ -195,16 +216,15 @@
 
         <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
-                <h5>COMP1200 - Intermediate C++ Programming</h5>
-                <h6 class="text-warning">Weekly Labs Due every Wednesday</h6>
+                <h5>CARE10 - Career Strategies for Computing Professionals</h5>
                 <ul>
                     <% if(taskFives.length > 0) { %>
                     <% taskFives.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
-                            <label for="<%= task._id %>">
+                            <input type="checkbox" class="input101" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
                             <span class="taskName"><%= task.task %></span> - Due
                             <%= date.toString().substring(0,21) %>
                                 Submit by
@@ -227,7 +247,7 @@
             </div>
         </article>
 
-        <article class="col-md-6 col-lg-4">
+        <!-- <article class="col-md-6 col-lg-4">
             <div class="col-lg-12 articleBg">
                 <h5>MATH8 - Introductory to Computer Mathematics</h5>
                 <ul>
@@ -237,7 +257,7 @@
                     <div class="mb-3">
                         <li class="toggle">
                             <input type="checkbox" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
-                            <label for="<%= task._id %>">
+                            <label class="labelTasks" for="<%= task._id %>">
                             <span class="taskName"><%= task.task %></span> - Due
                             <%= date.toString().substring(0,21) %>
                                 Submit by
@@ -258,14 +278,182 @@
                     <% } %>
                 </ul>
             </div>
+        </article> -->
+    </div>
+
+    <div id="date102" class="row dates">
+        <article class="col-md-6 col-lg-4">
+            <div class="col-lg-12 articleBg">
+                <h5>COMP333 - OOP C++</h5>
+                <h6 class="text-warning">* Weekly Labs due by end of class</h6>
+                <ul>
+                    <% if(taskSevens.length > 0) { %>
+                    <% taskSevens.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save102(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                    Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/seven/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/seven/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                    <% } %>
+                    <% if(currentUser){ %>
+                    <a href="/seven"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                </ul>
+            </div>
+        </article>
+
+        <article class="col-md-6 col-lg-4">
+            <div class="col-lg-12 articleBg">
+                <h5>COMP220 - PHP Programming</h5>
+                <ul>
+                    <% if(taskEights.length > 0) { %>
+                    <% taskEights.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save102(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/eight/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/eight/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                    <% } %>
+                    <% if(currentUser){ %>
+                    <a href="/eight"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                </ul>
+            </div>
+        </article>
+
+        <article class="col-md-6 col-lg-4">
+            <div class="col-lg-12 articleBg">
+                <h5>COMP206 - Web Programming with Javascript</h5>
+                <ul>
+                    <% if(taskNines.length > 0) { %>
+                    <% taskNines.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save102(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/nine/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/nine/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                    <% } %>
+                    <% if(currentUser){ %>
+                    <a href="/nine"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                </ul>
+            </div>
+        </article>
+
+        <article class="col-md-6 col-lg-4">
+            <div class="col-lg-12 articleBg">
+                <h5>COMP1080 - OS Linux, x/OS, TSO/ISPF</h5>
+                <ul>
+                    <% if(taskTens.length > 0) { %>
+                    <% taskTens.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save102(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
+                                <span class="taskName"><%= task.task %></span> - Due
+                                <%= date.toString().substring(0,21) %>
+                                Submit by
+                                    <span class="submit">
+                                        <%= task.submit %>
+                                    </span>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/ten/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/ten/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                    <% } %>
+                    <% if(currentUser){ %>
+                    <a href="/ten"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                </ul>
+            </div>
+        </article>
+
+        <article class="col-md-6 col-lg-4">
+            <div class="col-lg-12 articleBg">
+                <h5>CARE10 - Career Strategies for Computing Professionals</h5>
+                <ul>
+                    <% if(taskElevens.length > 0) { %>
+                    <% taskElevens.forEach((task) => { %>
+                    <% let date = task.date %>
+                    <div class="mb-3">
+                        <li class="toggle">
+                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save102(); addComplete();">
+                            <label class="labelTasks" for="<%= task._id %>">
+                            <span class="taskName"><%= task.task %></span> - Due
+                            <%= date.toString().substring(0,21) %>
+                                Submit by
+                                <span class="submit">
+                                    <%= task.submit %>
+                                </span>
+                            </label>
+                        </li>
+                        <% if(currentUser){ %>
+                        <a href="/eleven/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/eleven/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                    <% } %>
+                    <% if(currentUser){ %>
+                    <a href="/eleven"><i class="fas fa-plus"></i></a>
+                    <% } %>
+                </ul>
+            </div>
         </article>
     </div>
 
-</section> -->
+</section>
 
-<div class="text-center w-75 mx-auto mb-5">
+<!-- <div class="text-center w-75 mx-auto mb-5">
     <h4>Have a great summer everyone! See you in September, hopefully!</h4>
     <img style="width: 50%;" src="/images/summer.png" alt="">
-</div>
+</div> -->
 
 <%- include('partials/footer') %>

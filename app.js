@@ -9,6 +9,11 @@ const express = require('express'),
       TaskFour = require('./models/classFour'),
       TaskFive = require('./models/classFive'),
       TaskSix = require('./models/classSix'),
+      TaskSeven = require('./models/classSeven'),
+      TaskEight = require('./models/classEight'),
+      TaskNine = require('./models/classNine'),
+      TaskTen = require('./models/classTen'),
+      TaskEleven = require('./models/classEleven'),
       User    = require('./models/user'),
       LocalStrategy             = require('passport-local'),
       bodyParser = require('body-parser'),
@@ -56,50 +61,43 @@ app.use(function(req, res, next){
 // HOME PAGE
 
 app.get('/', (req, res) => {
+
     TaskOne.find({}, (err, allOnes) => {
-        if(err){
-            console.log(err);
-        } else {
-            TaskTwo.find({}, (err, allTwos) => {
-                if(err){
-                    console.log(err);
-                } else {
-                    TaskThree.find({}, (err, allThrees) => {
-                        if(err){
-                            console.log(err);
-                        } else {
-                            TaskFour.find({}, (err, allFours) => {
-                                if(err){
-                                    console.log(err);
-                                } else {
-                                    TaskFive.find({}, (err, allFives) => {
-                                        if(err){
-                                            console.log(err);
-                                        } else {
-                                            TaskSix.find({}, (err, allSixes) => {
-                                                if(err){
-                                                    console.log(err);
-                                                } else {
-                                                    res.render("index", {
-                                                        taskOnes: allOnes.sort((a, b) => a.date - b.date),
-                                                        taskTwos: allTwos.sort((a, b) => a.date - b.date),
-                                                        taskThrees: allThrees.sort((a, b) => a.date - b.date),
-                                                        taskFours: allFours.sort((a, b) => a.date - b.date),
-                                                        taskFives: allFives.sort((a, b) => a.date - b.date),
-                                                        taskSixes: allSixes.sort((a, b) => a.date - b.date)
-                                                        });
-                                                }
-                                            })
-                                        }
-                                    })
-                                }
-                            })
-                        }
-                    })
-                }
-            })
-        }
-    })
+        TaskTwo.find({}, (err, allTwos) => {
+            TaskThree.find({}, (err, allThrees) => {
+                TaskFour.find({}, (err, allFours) => {
+                    TaskFive.find({}, (err, allFives) => {
+                        TaskSix.find({}, (err, allSixes) => {
+                            TaskSeven.find({}, (err, allSevens) => {
+                                TaskEight.find({}, (err, allEights) => {
+                                    TaskNine.find({}, (err, allNines) => {
+                                        TaskTen.find({}, (err, allTens) => {
+                                            TaskEleven.find({}, (err, allElevens) => {
+                                                res.render("index", {
+                                                    taskOnes: allOnes.sort((a, b) => a.date - b.date),
+                                                    taskTwos: allTwos.sort((a, b) => a.date - b.date),
+                                                    taskThrees: allThrees.sort((a, b) => a.date - b.date),
+                                                    taskFours: allFours.sort((a, b) => a.date - b.date),
+                                                    taskFives: allFives.sort((a, b) => a.date - b.date),
+                                                    taskSixes: allSixes.sort((a, b) => a.date - b.date),
+                                                    taskSevens: allSevens.sort((a, b) => a.date - b.date),
+                                                    taskEights: allEights.sort((a, b) => a.date - b.date),
+                                                    taskNines: allNines.sort((a, b) => a.date - b.date),
+                                                    taskTens: allTens.sort((a, b) => a.date - b.date),
+                                                    taskElevens: allElevens.sort((a, b) => a.date - b.date)
+                                                })
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+
 })
 
 // REGISTER
@@ -149,7 +147,12 @@ const oneRoutes = require('./routes/classOne'),
       threeRoutes = require('./routes/classThree'),
       fourRoutes = require('./routes/classFour'),
       fiveRoutes = require('./routes/classFive'),
-      sixRoutes = require('./routes/classSix');
+      sixRoutes = require('./routes/classSix'),
+      sevenRoutes = require('./routes/classSeven'),
+      eightRoutes = require('./routes/classEight'),
+      nineRoutes = require('./routes/classNine'),
+      tenRoutes = require('./routes/classTen'),
+      elevenRoutes = require('./routes/classEleven');
 
 // ROUTES CONFIG
 
@@ -159,6 +162,11 @@ app.use('/three', threeRoutes);
 app.use('/four', fourRoutes);
 app.use('/five', fiveRoutes);
 app.use('/six', sixRoutes);
+app.use('/seven', sevenRoutes);
+app.use('/eight', eightRoutes);
+app.use('/nine', nineRoutes);
+app.use('/ten', tenRoutes);
+app.use('/eleven', elevenRoutes);
 
 // LISTEN  PORT
 
