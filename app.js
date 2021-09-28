@@ -61,7 +61,6 @@ app.use(function(req, res, next){
 // HOME PAGE
 
 app.get('/', (req, res) => {
-
     TaskOne.find({}, (err, allOnes) => {
         TaskTwo.find({}, (err, allTwos) => {
             TaskThree.find({}, (err, allThrees) => {
