@@ -139,6 +139,10 @@ ul.notice li {
     font-style: italic;
 }
 
+.loginButton {
+    padding-right: 1em;
+}
+
 .logout {
     list-style: none;
     margin-left: 2em;
@@ -322,6 +326,11 @@ input[type=checkbox]:checked + label {
         margin: auto;
         text-align: center;
     }
+
+    .loginButton {
+        padding-right: 0em;
+    }
+    
 
     #carousel-modal {
         width: 100%;
