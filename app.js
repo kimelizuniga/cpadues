@@ -14,6 +14,7 @@ const express = require('express'),
       TaskNine = require('./models/classNine'),
       TaskTen = require('./models/classTen'),
       TaskEleven = require('./models/classEleven'),
+      TaskTwelve = require('./models/classTwelve'),
       User    = require('./models/user'),
       LocalStrategy             = require('passport-local'),
       bodyParser = require('body-parser'),
@@ -72,18 +73,21 @@ app.get('/', (req, res) => {
                                     TaskNine.find({}, (err, allNines) => {
                                         TaskTen.find({}, (err, allTens) => {
                                             TaskEleven.find({}, (err, allElevens) => {
-                                                res.render("index", {
-                                                    taskOnes: allOnes.sort((a, b) => a.date - b.date),
-                                                    taskTwos: allTwos.sort((a, b) => a.date - b.date),
-                                                    taskThrees: allThrees.sort((a, b) => a.date - b.date),
-                                                    taskFours: allFours.sort((a, b) => a.date - b.date),
-                                                    taskFives: allFives.sort((a, b) => a.date - b.date),
-                                                    taskSixes: allSixes.sort((a, b) => a.date - b.date),
-                                                    taskSevens: allSevens.sort((a, b) => a.date - b.date),
-                                                    taskEights: allEights.sort((a, b) => a.date - b.date),
-                                                    taskNines: allNines.sort((a, b) => a.date - b.date),
-                                                    taskTens: allTens.sort((a, b) => a.date - b.date),
-                                                    taskElevens: allElevens.sort((a, b) => a.date - b.date)
+                                                TaskTwelve.find({}, (err, allTwelves) => {
+                                                    res.render("index", {
+                                                        taskOnes: allOnes.sort((a, b) => a.date - b.date),
+                                                        taskTwos: allTwos.sort((a, b) => a.date - b.date),
+                                                        taskThrees: allThrees.sort((a, b) => a.date - b.date),
+                                                        taskFours: allFours.sort((a, b) => a.date - b.date),
+                                                        taskFives: allFives.sort((a, b) => a.date - b.date),
+                                                        taskSixes: allSixes.sort((a, b) => a.date - b.date),
+                                                        taskSevens: allSevens.sort((a, b) => a.date - b.date),
+                                                        taskEights: allEights.sort((a, b) => a.date - b.date),
+                                                        taskNines: allNines.sort((a, b) => a.date - b.date),
+                                                        taskTens: allTens.sort((a, b) => a.date - b.date),
+                                                        taskElevens: allElevens.sort((a, b) => a.date - b.date),
+                                                        taskTwelves: allTwelves.sort((a, b) => a.date - b.date),
+                                                    })
                                                 })
                                             });
                                         });
@@ -152,6 +156,7 @@ const oneRoutes = require('./routes/classOne'),
       nineRoutes = require('./routes/classNine'),
       tenRoutes = require('./routes/classTen'),
       elevenRoutes = require('./routes/classEleven');
+      twelveRoutes = require('./routes/classTwelve');
 
 // ROUTES CONFIG
 
@@ -166,6 +171,7 @@ app.use('/eight', eightRoutes);
 app.use('/nine', nineRoutes);
 app.use('/ten', tenRoutes);
 app.use('/eleven', elevenRoutes);
+app.use('/twelve', twelveRoutes);
 
 // LISTEN  PORT
 

@@ -20,6 +20,7 @@ if(index == 0)
     date102.style.display = "none";
     check101.style.display = "block";
     check102.style.display = "none";
+    
 }
 else if (index == 1)
 {

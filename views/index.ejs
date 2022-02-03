@@ -452,8 +452,8 @@
             <div class="col-lg-12 articleBg">
                 <h5>QUAL200 - Quality Assurance</h5>
                 <ul>
-                    <% if(taskSixes.length > 0) { %>
-                    <% taskSixes.forEach((task) => { %>
+                    <% if(taskTwelves.length > 0) { %>
+                    <% taskTwelves.forEach((task) => { %>
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
@@ -468,14 +468,14 @@
                             </label>
                         </li>
                         <% if(currentUser){ %>
-                        <a href="/six/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
-                        <a href="/six/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
+                        <a href="/twelve/<%= task.id %>/edit"><i class="fas fa-edit"></i></a>
+                        <a href="/twelve/<%= task.id %>/delete"><i class="fas fa-trash-alt"></i></a>
                         <% } %>
                     </div>
                     <% }) %>
                     <% } %>
                     <% if(currentUser){ %>
-                    <a href="/six"><i class="fas fa-plus"></i></a>
+                    <a href="/twelve"><i class="fas fa-plus"></i></a>
                     <% } %>
                 </ul>
             </div>
