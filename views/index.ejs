@@ -457,7 +457,7 @@
                     <% let date = task.date %>
                     <div class="mb-3">
                         <li class="toggle">
-                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save(); addComplete();">
+                            <input type="checkbox" class="input102" name="<%= task._id %>" id="<%= task._id %>" onclick="save102(); addComplete();">
                             <label class="labelTasks" for="<%= task._id %>">
                             <span class="taskName"><%= task.task %></span> - Due
                             <%= date.toString().substring(0,21) %>
